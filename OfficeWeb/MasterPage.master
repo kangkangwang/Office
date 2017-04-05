@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .sit
+        {
+            background: -webkit-linear-gradient(#F3F7FC, #ADB9CD, #F0F8FD);
+            background: -moz-linear-gradient(#F3F7FC, #ADB9CD, #F0F8FD);
+            background: -ms-linear-gradient(#F3F7FC, #ADB9CD, #F0F8FD);
+            background: -o-linear-gradient(#F3F7FC, #ADB9CD, #F0F8FD);
+            background: linear-gradient(#F3F7FC, #ADB9CD, #F0F8FD);
+            float: right;
+            width: 974px;
+            height: 25px;
+            font-family: 楷体;
+            padding-bottom: 0px;
+            line-height: 25px;
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+        .foot
+        {
+            font-family: @Adobe 楷体 Std R;
+            font-size: small;
+        }
+        
+        img
+        {
+            border: 0px;
+        }
+        .flt
+        {
+            float: left;
+        }
+        .menubg
+        {
+            clear: left;
+            background-color: #699ED2;
+            width: 200px;
+        }
+        .menu
+        {
+            float: left;
+            clear: left;
+            font: bold 11px Helvetica, Arial, sans-serif;
+        }
+        .menu li
+        {
+            margin: 0px 0px 0px 0px;
+            list-style: none;
+        }
+        .menu a, .menu a:visited
+        {
+            width: 150px;
+            height: 43px;
+            margin: 0px 0px -2px -20px;
+            position: relative;
+            display: block;
+            color: #cbe7f5;
+            text-decoration: none;
+            background: url(../image/24.jpg) no-repeat;
+            padding: 7px 0 0 8px;
+            top: 0px;
+            left: 0px;
+        }
+        *html .menu a, .menu a:visited
+        {
+            width: 150px;
+            height: 43px;
+            margin: 0px 0px -2px -20px;
+            position: relative;
+            display: block;
+            color: #cbe7f5;
+            text-decoration: none;
+            background: url(../image/24.jpg) no-repeat;
+            padding: 7px 0 0 8px;
+        }
+        .menu a:hover, .menu a:active, .menu li.current_page_item a, .menu li.current_page_item a:visited
+        {
+            background: url(../image/23.jpg) no-repeat;
+            text-decoration: none;
+        }
+        .bot
+        {
+            clear: left;
+        }
+      
+     
+        .name
+        {
+            font-size: x-large;
+            color: #FFFFFF;
+            font-family: 华文隶书;
+        }
+        .title
+        {
+            font-size: x-large;
+            color: #FFFFFF;
+        }
+       
+        
+     
+       
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script language="javascript" type="text/jscript">
+        function startTime() {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
+            var w = today.getDay()
+            var weekday
+            // add a zero in front of numbers<10
+            m = checkTime(m)
+            s = checkTime(s)
+            weekday = checkday(w)
+            document.getElementById('time').innerHTML = "系统时间："+today.getFullYear() + "." + (today.getMonth() + 1) + "." + today.getDate() + " " + weekday + h + ":" + m + ":" + s + " "
+            t = setTimeout('startTime()', 500)
+        }
+
+        function checkTime(i) {
+            if (i < 10)
+            { i = "0" + i }
+            return i
+        }
+        function checkday(w) {
+            if (w == 0) return "星期日"
+            if (w == 1) return "星期一"
+            if (w == 2) return "星期二"
+            if (w == 3) return "星期三"
+            if (w == 4) return "星期四"
+            if (w == 5) return "星期五"
+            if (w == 6) return "星期六"
+        }
+    </script>
+</head>
+<body onload="startTime()" bgcolor="#BCD3E5">
+    <form id="form1" runat="server">
+    <div style="width: 974px; height: 600px; position: relative; top: 0px; margin-top: 0px;
+        margin-right: auto; margin-left: auto;" align="center">
+        <div style="background-position: left top; width: 100%; height: 20%; margin-bottom: 5px; 
+            background: -moz-linear-gradient(#1A6FC2, #D3DDE8, #1A6FC2) ;
+            background: -webkit-linear-gradient(#1A6FC2, #D3DDE8, #1A6FC2);
+            background: -ms-linear-gradient(#1A6FC2, #D3DDE8, #1A6FC2);
+            background: -o-linear-gradient(#1A6FC2, #D3DDE8, #1A6FC2);
+            background: linear-gradient(#1A6FC2, #D3DDE8, #1A6FC2);"
+            align="center">
+            <div style="height: 10px">
+            </div>
+            <div style="height: 80px; float: right; width: 100%">
+                <div style="height: 80px; float: left; width: 374px;">
+                    <div style="height: 40px; line-height: 40px;" align="right" class="name">
+                       <div style=" float:left; margin-left: 20px;"><asp:Image ID="Image1" runat="server" 
+                                ImageUrl="~/image/Deer_logo.png" Width="40px" /></div>
+                        <span style="font-family: 楷体" >设备、环境和能源监控系统</span></div>
+                        <div>
+                    <div style="height: 40px; line-height: 40px; font-size: 20px; color: #FFFFFF;">
+                        <div style="float:left; margin-left: 20px;" align="right"><asp:Image ID="Image2" runat="server" 
+                                ImageUrl="~/image/hfut_logo.png" Width="40px" /></div>
+                    
+                        <span >Equipment Environment Energy</span>
+                    </div></div>
+                </div>
+                <div style="float: left; width: 120px;">
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/image/atitude.png"
+                        Width="65px" AlternateText="系统状态" PostBackUrl="~/Main.aspx" />
+                        <div style="height: 10px; font-family: 楷体; color: #FFFFFF;">系统状态</div>
+                </div>
+                <div style="float: left; width: 120px;">
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/image/monitor.png"
+                        Width="65px" AlternateText="数据监控" PostBackUrl="~/monitor/monitor.aspx" />
+                        <div style="height: 10px; font-family: 楷体; color: #FFFFFF;">实时监测</div>
+                </div>
+                <div style="float: left; width: 120px;">
+                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/image/control.png"
+                        Width="65px" AlternateText="远程控制" PostBackUrl="~/control/control.aspx" />
+                        <div style="height: 10px; font-family: 楷体; color: #FFFFFF;">远程控制</div></div>
+                <div style="float: left; width: 120px;">
+                    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/image/Gird.png" Width="65px"
+                        AlternateText="历史报表" PostBackUrl="~/history/history.aspx" />
+                        <div style="height: 10px; font-family: 楷体; color: #FFFFFF;">历史报表</div>
+                </div>
+                <div style="float: left; width: 120px;">
+                    <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/image/set.png" Width="65px"
+                        PostBackUrl="~/usermanage.aspx" />
+                        <div style="height: 10px; font-family: 楷体; color: #FFFFFF;">系统设置</div>
+                </div>
+            </div>
+            <div class="sit" align="left">
+            <div style="float: left">
+                <asp:Label ID="user" runat="server" Text="当前用户：Deer   用户权限： 超级管理员" Width="400px"
+                    Height="15px" Font-Size="Small" Style="font-family: 新宋体"></asp:Label></div>
+                    <div id="time" 
+                    style="float: left; width: 400px; height: 15px; font-family: 新宋体; font-size: small; padding-right: 20px;" 
+                    align="right"></div>
+                <marquee onmouseover="stop()" onmouseout="start()" scrollamount="1" scrolldelay="100"
+                    direction="up" width="140px" height="20px">
+                <asp:Label ID="state" runat="server" Width="140px" Font-Size="Small" ForeColor="red"
+                    Height="15px" Style="font-family: 新宋体">系统状态：正常</asp:Label><p></p>
+                    <asp:Label ID="Label2" runat="server" Width="140px" Font-Size="Small" ForeColor="red"
+                    Height="15px" Style="font-family: 新宋体">系统总结点数：14</asp:Label><p></p>
+                    <asp:Label ID="Label3" runat="server" Width="140px" Font-Size="Small" ForeColor="red"
+                    Height="15px" Style="font-family: 新宋体">当前工作节点个数：14</asp:Label><p></p>
+                    <asp:Label ID="Label4" runat="server" Width="140px" Font-Size="Small" ForeColor="red"
+                    Height="15px" Style="font-family: 新宋体">系统信号周期：5S</asp:Label><p></p></marquee>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <div class="foot" align="center">
+        <span>Copyright © 2013 德尔工业服务有限公司 合肥工业大学 版权所有</span></div>
+</body>
+</html>
